@@ -6,7 +6,7 @@ El programa permite al usuario resolver el laberinto propuesto. Si necesita ayud
 
 1. [Instalación](https://github.com/SantiagoArboleda1/Laberinto/tree/master#1-instalaci%C3%B3n)
 2. [Instrucciones de uso](https://github.com/SantiagoArboleda1/Laberinto/tree/master#2-instrucciones-de-uso)
-3. [Manual técnico](https://github.com/SantiagoArboleda1/Laberinto/tree/master#3-manual-t%C3%A9cnico)
+3. [Funcionamiento](https://github.com/SantiagoArboleda1/Laberinto/tree/master#3-manual-t%C3%A9cnico)
 
 ## 1. Instalación
 Hay 2 opciones:
@@ -27,7 +27,7 @@ El objetivo del juego es llegar al final del laberinto. El jugador puede únicam
 - Botón **"Mostrar ayuda"**: Muestra la solución del laberinto.
 - Botón **"Ocultar ayuda"**: Oculta la solución del laberinto.
 
-## 3. Manual técnico
+## 3. Funcionamiento
 
 El programa hace uso de 9 JPanels (nombrados de la A a la H, y el panel del jugador) para representar graficamente el movimiento en la matriz "Laberinto", que contiene "el mapa".
 
@@ -37,7 +37,7 @@ La sensacion de movimiento se genera al cambiar el color de fondo de los paneles
 
 Los botones de movimiento funcionan de la siguiente manera:
 
-1. Primero comprueba que el movimientose haga hacia una posicion permitida
+1. Primero comprueba que el movimiento se haga hacia una posicion permitida.
 
 ```java       
 if (laberinto[M][N] == 0) {
