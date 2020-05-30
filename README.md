@@ -16,7 +16,7 @@ Hay 2 opciones:
 
 ## 2. Instrucciones de uso
 
-El objetivo del juego es llegar al final del laberinto. El jugador puede únicamente por los caminos (de color cyan). Las casillas de color gris representan los muros. La casilla central, color magenta, representa al jugador. Si decide activar la solución, algunos caminos se mostraran de color verde, indicando el camino correcto. Si no ve ningún camino verde, considere retroceder hasta encontrarlos.
+El objetivo del juego es llegar al final del laberinto. El jugador puede moverse únicamente por los caminos (de color cyan). Las casillas de color gris representan los muros. La casilla central, color magenta, representa al jugador. Si decide activar la solución, algunos caminos se mostraran de color verde, indicando el camino correcto. Si no ve ningún camino verde, considere retroceder hasta encontrarlos.
 
 ![Interfaz](GUI.png)
 
