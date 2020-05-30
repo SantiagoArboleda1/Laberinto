@@ -2,6 +2,8 @@
 
 El programa permite al usuario resolver el laberinto propuesto. Si necesita ayuda, el programa permite ver la solución.
 
+![Interfaz](GUI.png)
+
 ## Tabla de Contenido
 
 1. [Instalación](https://github.com/SantiagoArboleda1/Laberinto/tree/master#1-instalaci%C3%B3n)
