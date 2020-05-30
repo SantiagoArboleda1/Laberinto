@@ -28,3 +28,82 @@ El objetivo del juego es llegar al final del laberinto. El jugador puede únicam
 - Botón **"Ocultar ayuda"**: Oculta la solución del laberinto.
 
 ## 3. Manual técnico
+
+El programa hace uso de 9 JPanels (nombrados de la A a la H, y el panel del jugador) para representar graficamente el movimiento en la matriz "Laberinto", que contiene "el mapa".
+
+Los botones registran el movimiento en la matriz. Es imposible que se presente el error de que alguno de los mapas intente mostrar posiciones que no esten en la matriz, porque antes de cada movimiento se comprueba si se esta moviendo a una posicion permitida ("Camino") y los "bordes del mapa" son posiciones prohibidas ("Muro").
+
+La sensacion de movimiento se genera al cambiar el color de fondo de los paneles, excepto el panel que representa el jugador. Este cambio depende del valor de la posicion en la matriz "Laberinto".
+
+Los botones de movimiento funcionan de la siguiente manera:
+
+1. Primero comprueba que el movimientose haga hacia una posicion permitida
+
+```java       
+if (laberinto[M][N] == 0) {
+  JOptionPane.showMessageDialog(this, "Movimiento no permitido");
+  }
+```
+
+2. Luego realiza el movimiento. Este paso depende de la direccion del desplazamiento. Ej:
+
+```java
+// Para ir hacia arriba se resta 1 en el valor de filas de la coordenada en la matriz laberinto
+aM = aM - 1;
+bM = bM - 1;
+cM = cM - 1;
+dM = dM - 1;
+eM = eM - 1;
+fM = fM - 1;
+gM = gM - 1;
+hM = hM - 1;
+playerM = playerM - 1;
+```
+
+3. Se envian las coordenadas nuevas al metodo pintarMapa, que asigna el color correcto a cada panel. El color tambien varia si la solucion esta oculta o visible.
+
+```java
+    public void pintarMapa(JPanel mapa, int m, int n) {
+        int terreno = laberinto[m][n];
+        switch (terreno) {
+            case 0:
+                mapa.setBackground(Color.gray);
+                break;
+            case 1:
+                mapa.setBackground(Color.cyan);
+                break;
+            case 2:
+                if (solucion == 0) {
+                    mapa.setBackground(Color.cyan);
+                } else if (solucion == 1) {
+                    mapa.setBackground(Color.green);
+                }
+                break;
+            case 3:
+                mapa.setBackground(Color.cyan);
+                break;
+            case 4:
+                mapa.setBackground(Color.red);
+            default:
+                break;
+        }
+    }
+```
+El boton de solucion comprueba si la solucion esta desactivada o activada. Luego la activa o desactiva dependiendo del estado. Al final envia las coordenadas actuales al metodo pintarMapa para ocultar o mostrar la solucion.
+
+```java
+if (solucion == 0) {
+  // Si la solucion esta desactivada, se activa
+  solucion = 1;
+  botonSolucion.setText("Ocultar ayuda");
+  pintarMapa ...
+  
+} else if (solucion == 1) {
+  // Si la solucion esta activada, se desactiva
+  solucion = 0;
+  botonSolucion.setText("Mostrar ayuda");
+  pintarMapa ...
+}
+```
+
+El codigo fuente explica con mas detalle lo anterior.
